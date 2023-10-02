@@ -1,0 +1,227 @@
+1. 
+result = []
+for num in range(1500, 2701):
+    if num % 7 == 0 and num % 5 == 0:
+        result.append(num)
+print(result)
+
+2. for num in range(7):
+    if num == 3 or num == 6:
+        continue  
+    print(num)
+
+3. for num in range(1, 51):
+    if num % 3 == 0 and num % 5 == 0:
+        print("FizzBuzz")
+    elif num % 3 == 0:
+        print("Fizz")
+    elif num % 5 == 0:
+        print("Buzz")
+    else:
+        print(num)
+
+4. x = float(input("Input the length of side x: "))
+y = float(input("Input the length of side y: "))
+z = float(input("Input the length of side z: "))
+if x == y == z:
+    print("Equilateral triangle")
+elif x != y and y != z and z != x:
+    print("Scalene triangle")
+else:
+    print("Isosceles triangle")
+
+5. total_sum = 0
+count = 0
+while True:
+    try:
+        num = int(input("Enter an integer (0 to finish): "))
+        if num == 0:
+            break
+        total_sum += num
+        count += 1
+    except ValueError:
+        print("Invalid input. Please enter an integer.")
+if count > 0:
+    average = total_sum / count
+    print(f"Sum: {total_sum}")
+    print(f"Average: {average}")
+else:
+    print("No numbers entered.")
+
+6. num_rows = 9
+for i in range(1, num_rows + 1):
+    for j in range(i):
+        print(i, end="")
+    print()
+
+7.  numbers = []
+n = int(input("Enter the number of elements in the list: "))
+for i in range(n):
+    num = float(input(f"Enter element {i + 1}: "))
+    numbers.append(num)
+count = 0
+for num in numbers:
+    if num > 30:
+        count += 1
+print("The number of elements greater than 30 in the list is:", count)
+
+8. 
+length = float(input("Enter the length of the rectangle: "))
+breadth = float(input("Enter the breadth of the rectangle: "))
+if length == breadth:
+    print("It's a square.")
+else:
+    print("It's not a square.")
+
+9. 
+quantity = int(input("Enter the quantity: "))
+total_cost = quantity * 100
+if total_cost > 1000:
+    discount = 0.10 * total_cost  
+    total_cost -= discount	
+print(f"Total cost: {total_cost:.2f}")
+
+10. 
+salary = float(input("Enter the employee's salary: "))
+years_of_service = int(input("Enter the employee's years of service: "))
+bonus = 0.0
+if years_of_service > 5:
+    bonus = 0.05 * salary  
+print(f"Net bonus amount: {bonus:.2f}")
+
+
+11. 
+marks = float(input("Enter the marks: "))
+if marks < 25:
+    grade = "F"
+elif marks >= 25 and marks < 45:
+    grade = "E"
+elif marks >= 45 and marks < 50:
+    grade = "D"
+elif marks >= 50 and marks < 60:
+    grade = "C"
+elif marks >= 60 and marks < 80:
+    grade = "B"
+else:
+    grade = "A"
+print("Grade: "grade)
+
+12. 
+classes_held = int(input("Enter the number of classes held: "))
+classes_attended = int(input("Enter the number of classes attended: "))
+attendance_percentage = (classes_attended / classes_held) * 100
+if attendance_percentage >= 75:
+    print(f"Percentage of classes attended: {attendance_percentage:.2f}%")
+    print("The student is allowed to sit in the exam.")
+else:
+    print(f"Percentage of classes attended: {attendance_percentage:.2f}%")
+    print("The student is not allowed to sit in the exam due to low attendance.")
+
+13.  
+total_sum = 0
+for i in range(10):
+    num = int(input("Enter an integer: "))
+    total_sum += num
+average = total_sum / 10
+print("The average of the 10 integers is:", average)
+
+14.
+numbers = [24, 50, 29]
+for num in numbers:
+    print(f"Multiplication table of {num}:")
+    for i in range(1, 11): 
+        result = num * i
+        print(f"{num} x {i} = {result}")
+
+15. 
+total_sum = 0
+count = 0
+product = 1
+while True:
+    user_input = input("Enter an integer (press 'q' to quit): ")
+    if user_input.lower() == 'q':
+        break
+    if user_input.isdigit():
+        num = int(user_input)
+        total_sum += num 
+        product *= num 
+        count += 1
+    else:
+        print("Invalid input. Please enter an integer.")
+if count > 0:
+    average = total_sum / count
+    print("Average of entered integers:", average)
+    print("Product of entered integers:", product)
+else:
+    print("No valid integers were entered.")
+
+16. 
+user = input("Enter elements separated by spaces to create a list: ").split()
+eledel = input("Enter the element you want to delete: ")
+for item in user:
+    if item == eledel:
+        user.remove(item)
+print("Updated list:", user)
+
+17.
+def is_prime(num):
+    if num <= 1:
+        return False
+    if num <= 3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+enum = [x for x in range(1, 101) if x % 2 == 0]
+onum= [x for x in range(1, 101) if x % 2 != 0]
+primenum = [x for x in range(1, 101) if is_prime(x)]
+print("List of even numbers:", enum)
+print("List of odd numbers:", onum)
+print("List of prime numbers:", primenum)
+
+18.
+even_numbers = [x for x in range(1, 101) if x % 2 == 0]
+odd_numbers = [x for x in range(1, 101) if x % 2 != 0]
+div_by_4 = [x for x in even_numbers if x % 4 == 0]
+div_by_6 = [x for x in even_numbers if x % 6 == 0]
+div_by_8 = [x for x in even_numbers if x % 8 == 0]
+div_by_10 = [x for x in even_numbers if x % 10 == 0]
+div_by_3 = [x for x in odd_numbers if x % 3 == 0]
+div_by_5 = [x for x in odd_numbers if x % 5 == 0]
+div_by_7 = [x for x in odd_numbers if x % 7 == 0]
+div_by_9 = [x for x in odd_numbers if x % 9 == 0]
+print("Numbers divisible by 4:", div_by_4)
+print("Numbers divisible by 6:", div_by_6)
+print("Numbers divisible by 8:", div_by_8)
+print("Numbers divisible by 10:", div_by_10)
+print("Numbers divisible by 3:", div_by_3)
+print("Numbers divisible by 5:", div_by_5)
+print("Numbers divisible by 7:", div_by_7)
+print("Numbers divisible by 9:", div_by_9)
+
+19.
+int_list = []
+str_list = []
+float_list = []
+user_input = input("Enter elements separated by spaces (integers, floats, and strings): ")
+mixed_list = user_input.split()
+for item in mixed_list:
+    if item.isdigit() or (item[0] == '-' and item[1:].isdigit()):
+        int_list.append(int(item))
+    elif item.replace('.', '', 1).isdigit(): float_list.append(float(item))
+    else:
+        str_list.append(item)
+print("Integers:", int_list)
+print("Strings:", str_list)
+print("Floats:", float_list)
+
+
+20.
+original_list = [1, 2, 3, 4, 5]
+squared_list = [x**2 for x in original_list]
+print("List of squares:", squared_list
