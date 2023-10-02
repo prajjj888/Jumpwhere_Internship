@@ -1,1 +1,201 @@
+1. 
+dict = {}
+n = int(input("Enter the number of key-value pairs: "))
+for i in range(n):
+    key = int(input("Enter key: "))
+    value = int(input("Enter value: "))
+    dict[key] = value
+ascending = dict(sorted(dict.items(), key=lambda item: item[1]))
+descending= dict(sorted(dict.items(), key=lambda item: item[1], reverse=True))
+print("Ascending:", ascending)
+print("Descending:", descending)
+
+2.
+dict = {0: 10, 1: 20}
+key = 2
+value = 30
+dict[key] = value
+print(dict)
+
+3.
+dict1 = {1: 10, 2: 20}
+dict2 = {3: 30, 4: 40}
+dict3 = {5: 50, 6: 60}
+res = {}
+for d in [dict1, dict2, dict3]:
+    res.update(d)
+print(res)
+
+4. 
+dict = {1: 10, 2: 20, 3: 30, 4: 40}
+key = int(input("Enter the key to check: "))
+if key in dict:
+    print("Key exists in the dictionary.")
+else:
+    print("Key does not exist in the dictionary.")
+
+5.
+dict = {}
+n = int(input("Enter the number of key-value pairs: "))
+for i in range(n):
+    key = input("Enter key: ")
+    value = input("Enter value: ")
+     dict[key] = value
+print("Iterating through keys:")
+for key in dict:
+    print("Key:", key, "Value:", dict[key])
+print("Iterating through key-value pairs:")
+for key, value in dict.items():
+    print("Key:", key, "Value:", value)
+
+6. 
+n = int(input("Enter a number (n): "))
+res= {}
+for x in range(1, n + 1):
+    res[x] = x * x
+print(res)
+
+7. 
+dict1 = {}
+n1 = int(input("Enter the number of key-value pairs for the first dictionary: "))
+for i in range(n1):
+    key = input("Enter key: ")
+    value = input("Enter value: ")
+    dict1[key] = value
+dict2 = {}
+n2 = int(input("Enter the number of key-value pairs for the second dictionary: "))
+for i in range(n2):
+    key = input("Enter key: ")
+    value = input("Enter value: ")
+    dict2[key] = value
+mdict = {**dict1, **dict2}
+print(m_dict)
+
+8.
+dict = {}
+n = int(input("Enter the number of key-value pairs: "))
+for i in range(n):
+    key = input("Enter key: ")
+    value = int(input("Enter value: "))
+    dict[key] = value
+tsum = sum(dict.values())
+print("Sum of all items:", tsum)
+
+9.
+dict = {}
+n = int(input("Enter the number of items in the dictionary: "))
+for i in range(n):
+    key = input("Enter a key: ")
+    value = int(input("Enter a value: "))
+    dict[key] = value
+multiplier = int(input("Enter a multiplier: "))
+for key in dict:
+    dict[key] *= multiplier
+print("Updated Dictionary:", dict)
+
+10.
+dict = {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}
+kremove = input("Enter the key to remove: ")
+if kremove in dict:
+    del dict[kremove]
+    print("Key", kremove, "removed from the dictionary.")
+else:
+    print("Key", kremove, "not found in the dictionary.")
+print("Updated Dictionary:", dict)
+
+11.
+dict = {}
+n = int(input("Enter the number of items in the dictionary: "))
+for i in range(n):
+    key = input("Enter a key: ")
+    value = input("Enter a value: ")
+    dict[key] = value
+sdict = dict(sorted(dict.items()))
+print("Sorted Dictionary by Key:", sdict)
+
+12.
+dict = { }
+n = int(input("Enter the number of items in the dictionary: "))
+for i in range(n):
+    key = input("Enter a key: ")
+    value = int(input("Enter a value: "))
+    dict[key] = value
+max_val = max(dict.values())
+min_val = min(dict.values())
+print("Maximum Value:", max_val)
+print("Minimum Value:", min_val)
+
+13.
+dict = {}
+n = int(input("Enter the number of items in the dictionary: "))
+for i in range(n):
+    key = input("Enter a key: ")
+    value = input("Enter a value: ")
+   dict[key] = value
+dict1 = {}
+for key, value in dict.items():
+    if value not in dict1.values():
+        dict1[key] = value
+print("Dictionary without Duplicates:", dict1)
+
+14. 
+dict = {}
+n = int(input("Enter the number of items in the dictionary: "))
+for i in range(n):
+    key = input("Enter a key: ")
+    value = input("Enter a value: ")
+    dict[key] = value
+if not dict:
+    print("The dictionary is empty.")
+else:
+    print("The dictionary is not empty.")
+
+15.
+from collections import Counter
+dict1 = {'a': 100, 'b': 200, 'c': 300}
+dict2 = {'a': 300, 'b': 200, 'd': 400}
+result = Counter(dict1) + Counter(dict2)
+print("Combined Dictionary with Summed Values:", res)
+
+16.
+dict = {}
+n = int(input("Enter the number of items in the dictionary: "))
+for i in range(n):
+    key = input("Enter a key: ")
+    value = int(input("Enter a value: "))
+    dict[key] = value
+sdict = dict(sorted(dict.items(), key=lambda item: item[1], reverse=True))
+high= {k: v for k, v in list(sdict.items())[:3]}
+print("Highest 3 Values in the Dictionary:", high)
+
+17. 
+dict1 = {'k1': 1, 'k2': 3, 'k3': 2}
+dict2 = {'k1': 1, 'k2': 2}
+for key, value in dict1.items():
+    if key in dict2 and dict2[key] == value:
+        print(f"{key}: {value} is present in both dict1 and dict2")
+
+18.
+listdict1 = [{}, {}, {}]  
+listdict2 = [{1, 2}, {}, {}] 
+def dicts_empty(lst):
+    return all(not d for d in lst)
+result1 = dicts_empty(listdict1)
+print("Result for listdict1:", res1)
+result2 = dicts_empty(listdict2)
+print("Result for listdict2:", res2)
+
+19.
+lists = [[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
+list1 = []
+for sublist in lists:
+    if sublist not in list1:
+        list1.append(sublist)
+print("New List:", list1)
+
+20.
+lst1 = [10, 20, 30]
+lst2 = [40, 50, 60]
+lst1 = lst2 + lst1
+print("Extended List:", lst1)
 
